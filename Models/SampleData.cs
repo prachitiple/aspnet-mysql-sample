@@ -10,7 +10,7 @@ namespace aspnet_mysql_sample.Models
 {
     public class SampleData
     {
-        private static string connectionString = ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString;
+        private static string connectionString = ConnectionSetting.CONNECTION_STRING;
 
         public static void RetriveRecords()
         {

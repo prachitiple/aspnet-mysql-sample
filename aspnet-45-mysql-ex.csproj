@@ -109,7 +109,7 @@
     <Content Include="bin\aspnet-mysql-sample.dll" />
     <Content Include="bin\aspnet-mysql-sample.pdb" />
     <Content Include="bin\MySql.Data.dll" />
-    <Content Include="DatabaseScript\CreateTable.txt" />
+    <Content Include="DatabaseScript\CreateTable.sql" />
     <Content Include="Default.aspx" />
     <Content Include="packages.config" />
     <Content Include="assets\css\bootstrap-theme.css.map" />
@@ -132,6 +132,7 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ConnectionSetting.cs" />
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
