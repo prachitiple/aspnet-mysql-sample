@@ -7,10 +7,4 @@ This is MySQL Example Application which demonstrate connectivity between ASP.NET
 
 Once ASP.NET Templates availble in OpenShift Web Console, create application using `aspnet-45-mysql-ex` template and provide this as a source repository url. 
 
-2) Once application comes in running state, its time to update `connectionstring` in `Web.config` file. Based on `mysql` pod created in OpenShift update `DefaultConnection` in `Web.config` file. 
-
-##### NOTE: Use `mysql` pod `Cluster IP` as a `server` value in connection string and commit changes in GitHub.
-
-3) Now create table with dummy records in MySQL Pod running in OpenShift. Connect to MySQL Database using Port Forwarding and run `CreateTable.sql` script under `DatabaseScript` folder to create table and insert dummy records.
-
-Now rebuild application.
+2) Now create table with dummy records in MySQL Pod running in OpenShift. Connect to MySQL Database using Port Forwarding and run `CreateTable.sql` script under `DatabaseScript` folder to create table and insert dummy records.
