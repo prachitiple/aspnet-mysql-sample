@@ -1,4 +1,4 @@
-﻿#region Copyright ©2016, Click2Cloud Inc. - All Rights Reserved
+#region Copyright ©2016, Click2Cloud Inc. - All Rights Reserved
 /* ------------------------------------------------------------------- *
 *                            Click2Cloud Inc.                          *
 *                  Copyright ©2016 - All Rights reserved               *
@@ -72,9 +72,9 @@ namespace aspnet_mysql_sample
         {
             get
             {
-                if (!string.IsNullOrEmpty(Environment.GetEnvironmentVariable("MYSQL_DATABASE")))
+                if (!string.IsNullOrEmpty(Environment.GetEnvironmentVariable("DATABASE_NAME")))
                 {
-                    return Environment.GetEnvironmentVariable("MYSQL_DATABASE");
+                    return Environment.GetEnvironmentVariable("DATABASE_NAME");
                 }
 
                 return string.Empty;
@@ -85,9 +85,9 @@ namespace aspnet_mysql_sample
         {
             get
             {
-                if (!string.IsNullOrEmpty(Environment.GetEnvironmentVariable("MYSQL_USER")))
+                if (!string.IsNullOrEmpty(Environment.GetEnvironmentVariable("DATABASE_USER")))
                 {
-                    return Environment.GetEnvironmentVariable("MYSQL_USER");
+                    return Environment.GetEnvironmentVariable("DATABASE_USER");
                 }
 
                 return string.Empty;
@@ -98,9 +98,9 @@ namespace aspnet_mysql_sample
         {
             get
             {
-                if (!string.IsNullOrEmpty(Environment.GetEnvironmentVariable("MYSQL_PASSWORD")))
+                if (!string.IsNullOrEmpty(Environment.GetEnvironmentVariable("DATABASE_PASSWORD")))
                 {
-                    return Environment.GetEnvironmentVariable("MYSQL_PASSWORD");
+                    return Environment.GetEnvironmentVariable("DATABASE_PASSWORD");
                 }
 
                 return string.Empty;
