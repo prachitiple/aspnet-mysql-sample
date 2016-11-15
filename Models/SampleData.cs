@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Web;
 using MySql.Data.MySqlClient;
+using System.Data.OleDb;
 
 namespace aspnet_mysql_sample.Models
 {
@@ -14,15 +15,15 @@ namespace aspnet_mysql_sample.Models
 
         public static void RetriveRecords()
         {
-            using (MySqlConnection connection = new MySqlConnection(connectionString))
+            using (OleDbConnection connection = new OleDbConnection(connectionString))
             {
-                MySqlCommand command = connection.CreateCommand();
+                OleDbCommand command = connection.CreateCommand();
                 command.CommandText = "SELECT * FROM default.Car;";
 
                 if (connection.State != System.Data.ConnectionState.Open)
                     connection.Open();
 
-                MySqlDataReader reader = command.ExecuteReader();
+                OleDbDataReader reader = command.ExecuteReader();
 
                 Cars = new List<Car>();
                 while (reader.Read())
@@ -44,9 +45,9 @@ namespace aspnet_mysql_sample.Models
 
         public static bool InsertRecord(Car car)
         {
-            using (MySqlConnection connection = new MySqlConnection(connectionString))
+            using (OleDbConnection connection = new OleDbConnection(connectionString))
             {
-                MySqlCommand command = connection.CreateCommand();
+                OleDbCommand command = connection.CreateCommand();
                 command.CommandText = "INSERT INTO default.Car (Model, Year, Manufacturer) VALUES (?Model, ?Year, ?Manufacturer);";
 
                 command.Parameters.AddWithValue("?Model", car.Model);
