@@ -1,13 +1,17 @@
-CREATE TABLE `default`.Car
-(
-  CarId INT NOT NULL AUTO_INCREMENT,
-  Model VARCHAR(45) NOT NULL,
-  Year INT NULL,
-  Manufacturer VARCHAR(45) NULL,
-  PRIMARY KEY (`CarId`)
-);
 
-INSERT INTO `default`.`Car` (`Model`, `Year`, `Manufacturer`) VALUES ('370Z', '2012', 'Nissan');
-INSERT INTO `default`.`Car` (`Model`, `Year`, `Manufacturer`) VALUES ('Mustang', '2013', 'Ford');
-INSERT INTO `default`.`Car` (`Model`, `Year`, `Manufacturer`) VALUES ('Camaro', '2012', 'Chevrolet');
-INSERT INTO `default`.`Car` (`Model`, `Year`, `Manufacturer`) VALUES ('Charger', '2013', 'Dodge');
+CREATE TABLE [dbo].[Car](
+ [CarId] [int] IDENTITY(1,1) NOT NULL,
+ [Model] [nvarchar](50) NULL,
+ [Year] [int] NULL,
+ [Manufacturer] [nvarchar](50) NULL,
+ CONSTRAINT [PK_Car] PRIMARY KEY CLUSTERED 
+(
+ [CarId] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+
+INSERT INTO Car(Model,Year,Manufacturer) VALUES ('Camaro','2012', 'Chevrolet');
+INSERT INTO Car(Model,Year,Manufacturer) VALUES ('Charger', '2013', 'Dodge');
+
+
