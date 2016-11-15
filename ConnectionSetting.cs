@@ -31,7 +31,7 @@ namespace aspnet_mysql_sample
                 if (!(string.IsNullOrEmpty(MYSQL_SERVICE_HOST) || string.IsNullOrEmpty(MYSQL_SERVICE_PORT)
                 || string.IsNullOrEmpty(MYSQL_DATABASE) || string.IsNullOrEmpty(MYSQL_USER) || string.IsNullOrEmpty(MYSQL_PASSWORD)))
                 {
-                    string _connectionString = string.Format("server={0};port={1};database={2};uid={3};password={4};", MYSQL_SERVICE_HOST, MYSQL_SERVICE_PORT,
+                    string _connectionString = string.Format("Data Source={0};Initial Catalog={1};Integrated Security = SSPI;User ID={2};Password={3};", MYSQL_SERVICE_HOST,
                         MYSQL_DATABASE, MYSQL_USER, MYSQL_PASSWORD);
 
                     return _connectionString;
